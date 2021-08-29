@@ -15,4 +15,3 @@ prompt.get(edadInput, function(error,userInput) {
         console.log("No puede conducir.")
     }
 })
-
