@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <img src="img/img1.jpg" alt="">
+    <h3>Ejercicio 1</h3>
+    <p>Pide la edad y si es mayor de 18 años indica que ya puede conducir.</p>
+    <input type="number" id="edad" placeholder="Digita la edad">
+    <button onclick="verificar()">Verificar</button>
+    <div id="mensaje"></div>
+    <br>
+    <br>
+    <br>
+    <a href="index.html">Regresar</a>
+    <script>
+        
+        function verificar(){
+            var edad = parseInt(document.getElementById("edad").value);
+            var mensaje;
+
+            if (edad >= 18) {
+                mensaje = "Puede conducir.";
+            }
+            else {
+                mensaje = "No puede conducir.";
+            }
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>
