@@ -17,5 +17,4 @@ prompt.get(tiempoInput, function(error,userInput) {
     var pago = valorHoras + valorMinutos;
 
     console.log("Usted debe pagar: " + pago);
-
 })
