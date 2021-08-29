@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <img src="img/img5.png" alt="">
+    <h3>Ejercicio 5</h3>
+    <p>Un supermercado ha puesto en oferta la venta al por mayor de cierto producto, ofreciendo un descuento del 15% por la
+        compra de más de 3 docenas y 10% en caso contrario. <br>
+        Además por la compra de más de 3 docenas se obsequia una unidad del producto por cada docena en exceso sobre 3. <br>
+        Diseñe un algoritmo que determine el monto de la compra, el monto del descuento, el monto a pagar y el número de
+        unidades de obsequio por la compra de cierta cantidad de docenas del producto.</p>
+    
+    <h4>Producto: Cable USB tipo C</h4>
+    <h4>Precio: RD$150.00</h4>
+
+    <input type="number" id="cantidad" placeholder="Digita la cantidad">
+    <button onclick="calcular()">Vender</button>
+
+    <div id="mensaje"></div>
+    <br>
+    <br>
+    <br>
+    <a href="index.html">Regresar</a>
+    <script>
+        function calcular(){
+            const descuento10 = 10;
+            const descuento15 = 15;
+            const precioProducto = 150;
+
+            var cantidadComprada = parseFloat(document.getElementById("cantidad").value);
+            var subTotal;
+            var total;
+            var cantidadGratis = 0;
+            var descuento;
+            var mensaje;
+
+            if (cantidadComprada > 36) {
+                cantidadGratis = parseInt((cantidadComprada - 36) / 12);
+                subTotal = cantidadComprada * precioProducto;
+                descuento = subTotal * (descuento15 / 100);
+                total = subTotal - descuento;
+            }
+            else {
+                subTotal = cantidadComprada * precioProducto;
+                descuento = subTotal * (descuento10 / 100);
+                total = subTotal - descuento;
+            }  
+            mensaje = "ARTICULO: Cable USB Tipo C | CANTIDAD: " + cantidadComprada + " | IMPORTE: " + subTotal + " | DESCUENTO: " + descuento + " | TOTAL A PAGAR: " + total + " | UNIDADES GRATIS: " + cantidadGratis;
+            document.getElementById("mensaje").innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>

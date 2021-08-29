@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <img src="img/img3.jpg" alt="">
+    
+    <h3>Ejercicio 3</h3>
+    <p> En un estacionamiento cobran $/. 1.500 por hora o fracción. Diseñe un algoritmo que determine cuánto debe pagar un cliente por el estacionamiento de su vehículo, conociendo el tiempo de estacionamiento en horas y minutos.</p>
+    
+    <input type="number" id="txtHoras" placeholder="Digita las horas">
+    <input type="number" id="txtMinutos" placeholder="Digita los minutos">
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="mensaje"></div>
+    <br>
+    <br>
+    <br>
+    <a href="index.html">Regresar</a>
+
+    <script>
+        function calcular(){
+            var precioParqueo = 1500
+            var horas = parseFloat(document.getElementById("txtHoras").value);
+            var minutos = parseFloat(document.getElementById("txtMinutos").value);
+            
+            var valorHoras = precioParqueo * horas;
+            var valorMinutos = precioParqueo * (minutos/60);
+
+            var pago = valorHoras + valorMinutos;
+
+            document.getElementById("mensaje").innerHTML = "Usted debe pagar: " + pago;
+        }
+    </script>
+</body>
+</html>
